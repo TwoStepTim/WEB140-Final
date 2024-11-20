@@ -74,25 +74,25 @@
         <h2 class="text-center mb-4">Event Registration</h2>
         <p class="text-center mb-5">Join us for our upcoming events by filling out the form below.</p>
         
-        <form action="register-event.php" method="post" class="registration-form">
+        <form method="post" class="registration-form" id="eventForm">
             <!-- Name Field -->
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" class="form-control" required>
             </div>
-
+        
             <!-- Email Field -->
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" class="form-control" required>
             </div>
-
+        
             <!-- Phone Number Field -->
             <div class="form-group">
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone" class="form-control" required>
             </div>
-
+        
             <!-- Event Selection Dropdown -->
             <div class="form-group">
                 <label for="event">Select Event</label>
@@ -103,18 +103,19 @@
                     <option value="eco-gardening">Eco Gardening Seminar</option>
                 </select>
             </div>
-
+        
             <!-- Preferences/Comments Field -->
             <div class="form-group">
                 <label for="preferences">Preferences/Comments</label>
                 <textarea id="preferences" name="preferences" class="form-control" rows="4" placeholder="Let us know any specific requirements or preferences..."></textarea>
             </div>
-
+        
             <!-- Submit Button -->
             <div class="text-center">
                 <button type="submit" class="btn btn-main">Register Now</button>
             </div>
         </form>
+        
     </div>
 </section>
 
@@ -170,6 +171,13 @@
 
         
 <!-- Include Bootstrap JS -->
+<script>
+    document.getElementById('eventForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents the form from submitting
+    location.reload();      // Reloads the page
+});
+
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://kit.fontawesome.com/377f518282.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
